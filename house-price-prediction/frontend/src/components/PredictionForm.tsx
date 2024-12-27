@@ -40,7 +40,7 @@ const PredictionForm: React.FC = () => {
     try {
       console.log('Sending request with data:', numericInputData); // Log the data being sent
       const response = await axios.post(
-        'https://prodigy-ml-01-34.onrender.com/predict',
+        'http://127.0.0.1:5000/predict',
         numericInputData,
         {
           headers: {
