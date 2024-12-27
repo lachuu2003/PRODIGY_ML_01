@@ -6,7 +6,7 @@ import logging
 import os
 
 app = Flask(__name__, static_folder='../frontend/dist', static_url_path='')
-CORS(app, resources={r"/predict": {"origins": "https://prodigy-ml-01-30.onrender.com/"}})
+CORS(app, resources={r"/predict": {"origins": "https://prodigy-ml-01-31.onrender.com"}})
 logging.basicConfig(level=logging.DEBUG)
 
 # Load the trained model
