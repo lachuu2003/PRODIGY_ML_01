@@ -3,7 +3,7 @@ from flask_cors import CORS
 import pickle
 import numpy as np
 import logging
-
+import os
 app = Flask(__name__)
 
 # Enable CORS for all routes or specify React server's origin
@@ -11,7 +11,11 @@ CORS(app, resources={r"/predict": {"origins": "http://localhost:5173"}})
 logging.basicConfig(level=logging.DEBUG)
 
 # Load the trained model
-with open('model.pkl', 'rb') as file:
+base_dir = os.path.dirname(os.path.abspath(__file__))  # This will give the absolute path to the backend folder
+model_path = os.path.join(base_dir, 'model.pkl')
+
+# Open the file
+with open(model_path, 'rb') as file:
     model = pickle.load(file)
 
 @app.route('/')
