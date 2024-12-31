@@ -8,7 +8,7 @@ import os
 app = Flask(__name__, static_folder='../frontend/dist', static_url_path='')
 
 # Enable CORS for all routes or specify React server's origin
-CORS(app, resources={r"/predict": {"origins": "http://localhost:5173/"}})
+CORS(app, resources={r"/predict": {"origins": "https://prodigy-ml-01-35.onrender.com/"}})
 
 logging.basicConfig(level=logging.DEBUG)
 
